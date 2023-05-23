@@ -5,6 +5,8 @@ create table if not exists rockpaperscissors.hibernate_sequence
     next_val bigint null
 );
 
+insert into rockpaperscissors.hibernate_sequence (next_val) VALUES (1);
+
 create table if not exists rockpaperscissors.user
 (
     id           bigint       not null primary key,
