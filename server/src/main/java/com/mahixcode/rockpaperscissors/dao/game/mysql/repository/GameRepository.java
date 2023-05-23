@@ -11,5 +11,5 @@ public interface GameRepository extends JpaRepository<Game, Long> {
 
     Optional<Game> findGameByUserIdAndOutcomeIsNull(long userId);
 
-    boolean existsGameByUserIdAndOutcomeIsTrue(long userId);
+    boolean existsGameByUserIdAndOutcomeIsNull(long userId);
 }

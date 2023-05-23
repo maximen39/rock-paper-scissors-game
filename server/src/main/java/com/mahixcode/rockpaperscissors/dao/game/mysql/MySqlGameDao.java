@@ -36,7 +36,7 @@ public class MySqlGameDao implements GameDao {
 
     @Override
     public boolean hasActiveGameByUser(long id) {
-        return gameRepository.existsGameByUserIdAndOutcomeIsTrue(id);
+        return gameRepository.existsGameByUserIdAndOutcomeIsNull(id);
     }
 
     @Override
