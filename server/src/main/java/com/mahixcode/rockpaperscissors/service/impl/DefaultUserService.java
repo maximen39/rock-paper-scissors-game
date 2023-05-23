@@ -29,6 +29,8 @@ public class DefaultUserService implements UserService {
             () -> new NotFoundException(String.format("User %s not found!", username))
         );
         if (user.getPassword().equalsIgnoreCase(password)) {
+            user.setLastAuthAt(LocalDateTime.now());
+            userDao.saveUser(user);
             return new UserProfile().setId(user.getId()).setUsername(user.getUsername());
         }
         throw new InvalidCredentialsException("Wrong password!");
