@@ -10,6 +10,7 @@ import com.mahixcode.rockpaperscissors.exception.AlreadyExistsException;
 import com.mahixcode.rockpaperscissors.exception.NotFoundException;
 import com.mahixcode.rockpaperscissors.game.models.Step;
 import com.mahixcode.rockpaperscissors.network.models.SignType;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 import java.util.HashMap;
@@ -27,7 +28,7 @@ public class GameCoordinator {
     private final Random random = new Random();
     private final HashMap<Game, GameTimer> timers = new HashMap<>();
 
-    public GameCoordinator(GameDao gameDao) {
+    public GameCoordinator(@Qualifier("mysqlGameDao") GameDao gameDao) {
         this.gameDao = gameDao;
     }
 

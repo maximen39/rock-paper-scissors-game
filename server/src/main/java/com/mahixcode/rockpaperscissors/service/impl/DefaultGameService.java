@@ -9,6 +9,7 @@ import com.mahixcode.rockpaperscissors.game.models.Step;
 import com.mahixcode.rockpaperscissors.models.UserProfile;
 import com.mahixcode.rockpaperscissors.network.models.SignType;
 import com.mahixcode.rockpaperscissors.service.GameService;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -17,7 +18,7 @@ public class DefaultGameService implements GameService {
     private final GameCoordinator gameCoordinator;
     private final UserDao userDao;
 
-    public DefaultGameService(GameCoordinator gameCoordinator, UserDao userDao) {
+    public DefaultGameService(GameCoordinator gameCoordinator, @Qualifier("mysqlUserDao") UserDao userDao) {
         this.gameCoordinator = gameCoordinator;
         this.userDao = userDao;
     }

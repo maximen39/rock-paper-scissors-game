@@ -7,6 +7,7 @@ import com.mahixcode.rockpaperscissors.exception.InvalidCredentialsException;
 import com.mahixcode.rockpaperscissors.exception.NotFoundException;
 import com.mahixcode.rockpaperscissors.models.UserProfile;
 import com.mahixcode.rockpaperscissors.service.UserService;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -16,7 +17,9 @@ public class DefaultUserService implements UserService {
 
     private final UserDao userDao;
 
-    public DefaultUserService(UserDao userDao) {
+    public DefaultUserService(
+        @Qualifier("mysqlUserDao") UserDao userDao
+    ) {
         this.userDao = userDao;
     }
 

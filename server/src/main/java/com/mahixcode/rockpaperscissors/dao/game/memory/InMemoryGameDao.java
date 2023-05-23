@@ -1,4 +1,4 @@
-package com.mahixcode.rockpaperscissors.dao.game.impl;
+package com.mahixcode.rockpaperscissors.dao.game.memory;
 
 import com.mahixcode.rockpaperscissors.dao.game.GameDao;
 import com.mahixcode.rockpaperscissors.entity.Game;
@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
-@Component
+@Component("inMemoryGameDao")
 public class InMemoryGameDao implements GameDao {
 
     private final List<Game> games = new ArrayList<>();

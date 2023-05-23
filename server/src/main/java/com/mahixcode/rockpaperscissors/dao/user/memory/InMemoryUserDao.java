@@ -1,4 +1,4 @@
-package com.mahixcode.rockpaperscissors.dao.user.impl;
+package com.mahixcode.rockpaperscissors.dao.user.memory;
 
 import com.mahixcode.rockpaperscissors.dao.user.UserDao;
 import com.mahixcode.rockpaperscissors.entity.User;
@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-@Component
+@Component("inMemoryUserDao")
 public class InMemoryUserDao implements UserDao {
 
     private final List<User> users = new ArrayList<>();
