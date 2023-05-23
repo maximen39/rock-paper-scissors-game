@@ -1,6 +1,7 @@
 package com.mahixcode.rockpaperscissors.entity;
 
 import com.mahixcode.rockpaperscissors.network.models.SignType;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
@@ -23,6 +24,7 @@ import javax.validation.constraints.NotNull;
 @ToString
 @RequiredArgsConstructor
 @Accessors(chain = true)
+@EqualsAndHashCode(of = "id")
 public class GameStep {
 
     @Id

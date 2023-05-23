@@ -1,5 +1,6 @@
 package com.mahixcode.rockpaperscissors.entity;
 
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
@@ -20,6 +21,7 @@ import java.time.LocalDateTime;
 @ToString
 @RequiredArgsConstructor
 @Accessors(chain = true)
+@EqualsAndHashCode(of = "id")
 public class User {
 
     @Id
